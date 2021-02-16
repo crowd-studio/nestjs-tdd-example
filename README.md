@@ -15,3 +15,14 @@ Install dependencies
 ```bash
 yarn
 ```
+
+### Develop
+
+Create users module
+```bash
+nest g res users
+```
+
+### References
+
+- https://randomuser.me/api/?inc=gender,name,nat&page=3&results=10&seed=abc
