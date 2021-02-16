@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import axios from 'axios'
-import { RandomUsers } from './dto/randomUsers.dto'
+import { RandomUsers, IUser } from './dto/randomUsers.dto'
 
 @Injectable()
 export class UsersService {
@@ -13,6 +13,12 @@ export class UsersService {
     } catch (error) {
       console.log(error)
       return Promise.reject(error)
+    }
+  }
+  filterUsers(users: RandomUsers, gender: string): RandomUsers {
+    return {
+      ...users,
+      results: users.results.filter((user: IUser): boolean => user.gender === gender),
     }
   }
 }

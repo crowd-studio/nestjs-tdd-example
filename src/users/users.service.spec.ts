@@ -42,4 +42,14 @@ describe('UsersService', () => {
     expect(users.results.length).toEqual(20)
     done()
   })
+
+  it('(mock) should not return male users', async (done) => {
+    mockGetUsers.mockImplementation(apiMock)
+    let users = await service.getUsers('abc', 20, 1)
+    users = service.filterUsers(users, 'female')
+    expect(users.results).not.toEqual(
+      expect.arrayContaining([expect.objectContaining({ gender: 'male' })]),
+    )
+    done()
+  })
 })

@@ -23,6 +23,17 @@ Create users module
 nest g res users
 ```
 
+Work with tests
+```bash
+yarn test:watch
+```
+
+Test on local
+```bash
+yarn start
+```
+and visit http://localhost:3000/users/female
+
 ### References
 
 - https://randomuser.me/api/?inc=gender,name,nat&page=3&results=10&seed=abc
